@@ -1,0 +1,17 @@
+<div *ngIf = "pokemon">
+	<div class = "centered">
+		<img src={{pokemon.image}} alt={{pokemon.name}}>
+		<img src={{pokemon.image2}} alt={{pokemon.name}}>
+		<h2>{{pokemon.name}}</h2>
+		<h3>Pokemon Types: </h3>
+		<p>{{pokemon.type}}</p>
+		<h3>Pokemon Moves: </h3>
+		<p>{{pokemon.moves}}</p>
+		<div *ngIf = "!(pokemon.evolvsFrom == '-1')">
+			<h3>Evolved from:</h3>
+			<p>{{pokemon.evolvsFrom}}</p>
+		</div>
+		<button class = "button" (click)="goBack()">go back</button>
+
+	</div>
+</div>

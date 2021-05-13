@@ -1,0 +1,40 @@
+
+<main class="main-area">
+
+  <div class="centered">
+
+    <section class="cards">
+
+	<li *ngFor= "let pokemon of favoritPokemons">
+	
+      <article class="card">
+         <a > 
+          <figure class="thumbnail">
+		 	
+          <button mat-button color="warn" routerLink = "/detail/{{pokemon.name}}" class="mat-icon" disableRipple>
+            {{pokemon.name}}
+          </button>
+		  	
+          </figure>
+          <div class="card-content" routerLink = "/detail/{{pokemon.name}}">
+      
+     			 <img  src={{pokemon.image}} alt={{pokemon.name}} >
+            <br><br>
+            <mat-card-content>{{pokemon.type}}</mat-card-content>
+		  </div>
+		  
+		  <div class="main-div">
+    		<div class="button-div"> 
+          <button (click) = "removeFromFavorits(pokemon)" class="fav-button"> 
+            <i class="fa fa-star"></i> 
+            <span>Remove from favorites</span> 
+          </button> </div>
+		</div>
+	 	</a>
+		
+      </article>
+	
+	</li>
+    </section>
+  </div>
+</main>
